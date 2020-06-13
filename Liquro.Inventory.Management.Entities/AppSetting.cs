@@ -1,18 +1,18 @@
-﻿using System;
+using System;
 namespace Liquro.Inventory.Management.Entities
 {
-    public class AppSetting
+    public class AppSetting : BaseIdentifierModel
     {
         /// <summary>
         /// Key
         /// </summary>
-        [Required]
+        //[Required]
         public string key { get; set; }
 
         /// <summary>
         /// Value
         /// </summary>
-        [Required]
+        //[Required]
         public string Value { get; set; }
 
         /// <summary>

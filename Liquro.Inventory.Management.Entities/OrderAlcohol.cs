@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 namespace Liquro.Inventory.Management.Entities
 {
-    public class OrderAlcohol
+    public class OrderAlcohol : BaseIdentifierModel
     {
         /// <summary>
         /// 주문일자
         /// </summary>
-        [Required]
-        public DateTime OrderDate { get; set; }
+        //[Required]
+        public DateTimeOffset OrderDate { get; set; }
 
         /// <summary>
         /// 주류
@@ -33,7 +33,7 @@ namespace Liquro.Inventory.Management.Entities
         /// <summary>
         /// 수량
         /// </summary>
-        [Required]
+        //[Required]
         public int Quantity { get; set; }
 
         /// <summary>
@@ -64,54 +64,54 @@ namespace Liquro.Inventory.Management.Entities
 
         public string Note { get; set; }
 
-        [ForeignKey("AlcoholId")]
+        //[ForeignKey("AlcoholId")]
         [Obsolete("AlcoholSupplier 엔티티로 이동되었습니다. 제거될 예정이므로 사용하지 않습니다.")]
         public virtual Alcohol Alcohol { get; set; }
 
-        [ForeignKey("PaymentId")]
+        //[ForeignKey("PaymentId")]
         public virtual CommonCode Payment { get; set; }
 
-        [ForeignKey("TaxBillId")]
+        //[ForeignKey("TaxBillId")]
         public virtual CommonCode TaxBill { get; set; }
 
-        [ForeignKey("SupplierId")]
+        //[ForeignKey("SupplierId")]
         [Obsolete("AlcoholSupplier 엔티티로 이동되었습니다. 제거될 예정이므로 사용하지 않습니다.")]
         public virtual Supplier Supplier { get; set; }
 
-        [ForeignKey(nameof(AlcoholSupplierId))]
+        //[ForeignKey(nameof(AlcoholSupplierId))]
         public virtual AlcoholSupplier AlcoholSupplier { get; set; }
 
-        [NotMapped]
+        //[NotMapped]
         public string AlcoholName
         {
             get => AlcoholSupplier?.Alcohol?.Name;
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string KindsText
         {
             get => AlcoholSupplier?.Alcohol?.KindsText;
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string SupplierName
         {
             get => AlcoholSupplier?.Supplier?.NameOfCompany;
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string PaymentText
         {
             get => Payment?.Text;
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string TaxBillText
         {
             get => TaxBill?.Text;
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string OrderDateString
         {
             get => String.Format("{0:yyyy-MM-dd}", OrderDate);

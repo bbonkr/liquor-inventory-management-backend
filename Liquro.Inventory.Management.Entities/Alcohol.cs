@@ -2,7 +2,7 @@
 
 namespace Liquro.Inventory.Management.Entities
 {
-    public class Alcohol : ModelBase
+    public class Alcohol : BaseIdentifierModel
     {
         public string Name { get; set; }
 
@@ -38,14 +38,14 @@ namespace Liquro.Inventory.Management.Entities
         /// </summary>
         public string Note { get; set; }
 
-        [ForeignKey("KindsId")]
+        //[ForeignKey("KindsId")]
         public virtual CommonCode Kinds { get; set; }
 
-        [ForeignKey("SupplierId")]
+        //[ForeignKey("SupplierId")]
         [Obsolete("AlcoholSupplier 엔티티로 이동되었습니다. 제거될 예정이므로 사용하지 않습니다.")]
         public virtual Supplier Supplier { get; set; }
 
-        [NotMapped]
+        //[NotMapped]
         public string KindsText
         {
             get => Kinds?.Text;
@@ -57,7 +57,7 @@ namespace Liquro.Inventory.Management.Entities
         //    get => $"{ Supplier?.NameOfCompany }";
         //}
 
-        [NotMapped]
+        //[NotMapped]
         public string DisplayName
         {
             get
@@ -70,9 +70,5 @@ namespace Liquro.Inventory.Management.Entities
                 return name;
             }
         }
-
-        //public string Test1 { get; set; }
-
-        //public string Test2 { get; set; }
     }
 }

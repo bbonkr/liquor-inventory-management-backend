@@ -1,17 +1,19 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+
 namespace Liquro.Inventory.Management.Entities
 {
-    public class CommonCodeGroup
+    public class CommonCodeGroup:BaseIdentifierModel
     {
-        [Required]
+        //[Required]
         public string Group { get; set; }
 
-        [Required]
+        //[Required]
         public string Title { get; set; }
 
         public string Note { get; set; }
 
         //[InverseProperty("GroupId")]
-        public virtual ICollection<CommonCode> Codes { get; set; }
+        public virtual IList<CommonCode> Codes { get; set; }
     }
 }

@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 namespace Liquro.Inventory.Management.Entities
 {
-    public class CommonCode:ModelBase
+    public class CommonCode:BaseIdentifierModel
     {
-        [Required]
+        //[Required]
         public string Code { get; set; }
 
-        [Required]
+        //[Required]
         public string Text { get; set; }
 
         /// <summary>
@@ -16,14 +16,14 @@ namespace Liquro.Inventory.Management.Entities
 
         public bool Enabled { get; set; } = true;
 
-        [Required]
+        //[Required]
         public int Ordinal { get; set; } = 1;
 
         public string Note { get; set; }
 
         public string GroupId { get; set; }
 
-        [ForeignKey("GroupId")]
+        //[ForeignKey("GroupId")]
         public virtual CommonCodeGroup Group { get; set; }
     }
 }

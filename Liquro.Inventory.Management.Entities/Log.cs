@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 namespace Liquro.Inventory.Management.Entities
 {
-    public class Log
+    public class Log:BaseIdentifierModel
     {
         public string Level { get; set; }
 
@@ -11,7 +11,7 @@ namespace Liquro.Inventory.Management.Entities
 
         public string UserId { get; set; }
 
-        [ForeignKey("UserId")]
+        //[ForeignKey("UserId")]
         public virtual User User { get; set; }
     }
 }

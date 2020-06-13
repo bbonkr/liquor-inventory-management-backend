@@ -1,9 +1,9 @@
 ﻿using System;
 namespace Liquro.Inventory.Management.Entities
 {
-    public class Supplier
+    public class Supplier : BaseIdentifierModel
     {
-        [Required]
+        //[Required]
         public string NameOfCompany { get; set; }
 
         public string Phone1 { get; set; }
@@ -59,13 +59,13 @@ namespace Liquro.Inventory.Management.Entities
 
         public string Note { get; set; }
 
-        [ForeignKey("Phone1")]
+        //[ForeignKey("Phone1")]
         public virtual CommonCode Phone1Code { get; set; }
 
-        [ForeignKey("Mobile1")]
+        //[ForeignKey("Mobile1")]
         public virtual CommonCode Mobile1Code { get; set; }
 
-        [NotMapped]
+        //[NotMapped]
         public string Phone
         {
             get
@@ -81,7 +81,7 @@ namespace Liquro.Inventory.Management.Entities
             }
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string Mobile
         {
             get
@@ -97,7 +97,7 @@ namespace Liquro.Inventory.Management.Entities
             }
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string BusinessRegisterationNumber
         {
             get
@@ -115,7 +115,7 @@ namespace Liquro.Inventory.Management.Entities
             }
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string CoperationRegisterationNumber
         {
             get

@@ -1,7 +1,8 @@
 ﻿using System;
+
 namespace Liquro.Inventory.Management.Entities
 {
-    public class User :ModelBase
+    public class User : BaseIdentifierModel
     {
         public string UserName { get; set; }
 
@@ -17,6 +18,6 @@ namespace Liquro.Inventory.Management.Entities
 
         public int FailCount { get; set; }
 
-        public DateTime LatestSignIn { get; set; }
+        public DateTimeOffset LatestSignIn { get; set; }
     }
 }

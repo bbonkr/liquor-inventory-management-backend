@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 namespace Liquro.Inventory.Management.Entities
 {
-    public class AlcoholSupplier
+    public class AlcoholSupplier : BaseIdentifierModel
     {
         public string AlcoholId { get; set; }
 
         public string SupplierId { get; set; }
 
-        [ForeignKey("AlcoholId")]
+        //[ForeignKey("AlcoholId")]
         public virtual Alcohol Alcohol { get; set; }
 
-        [ForeignKey("SupplierId")]
+        //[ForeignKey("SupplierId")]
         public virtual Supplier Supplier { get; set; }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Liquro.Inventory.Management.Entities
             }
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string SupplierName
         {
             get
@@ -37,19 +37,19 @@ namespace Liquro.Inventory.Management.Entities
             }
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string AlcholAndSupplierDisplayName
         {
             get { return $"{Alcohol.DisplayName} {Supplier?.NameOfCompany}"; }
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string SupplierDisplayName
         {
             get { return Supplier?.NameOfCompany; }
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string SupplierNameAndUnitPrice
         {
             get
@@ -58,7 +58,7 @@ namespace Liquro.Inventory.Management.Entities
             }
         }
 
-        [NotMapped]
+        //[NotMapped]
         public string UnitPriceString
         {
             get
