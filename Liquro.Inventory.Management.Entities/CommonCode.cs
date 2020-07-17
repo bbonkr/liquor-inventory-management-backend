@@ -25,5 +25,9 @@ namespace Liquro.Inventory.Management.Entities
 
         //[ForeignKey("GroupId")]
         public virtual CommonCodeGroup Group { get; set; }
+
+        public string businessId { get; set; }
+
+        public virtual Business Business { get; set; }
     }
 }

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Liquro.Inventory.Management.Entities
 {
@@ -47,5 +49,10 @@ namespace Liquro.Inventory.Management.Entities
         /// 최근 로그인 시각
         /// </summary>
         public DateTimeOffset RecentlySignIn { get; set; }
+
+        /// <summary>
+        /// 사용자 매장
+        /// </summary>
+        public virtual IList<UserBusiness> Businesses { get; set; }
     }
 }

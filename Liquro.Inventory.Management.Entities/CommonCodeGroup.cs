@@ -15,5 +15,9 @@ namespace Liquro.Inventory.Management.Entities
 
         //[InverseProperty("GroupId")]
         public virtual IList<CommonCode> Codes { get; set; }
+
+        public string businessId { get; set; }
+
+        public virtual Business Business { get; set; }
     }
 }

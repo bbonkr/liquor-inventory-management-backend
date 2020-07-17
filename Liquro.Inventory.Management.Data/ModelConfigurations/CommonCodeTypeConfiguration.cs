@@ -14,6 +14,8 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
         {
             base.Configure(builder);
 
+            builder.HasComment("코드");
+
             builder.Property(x => x.Code)
                 .IsRequired(true)
                 .HasMaxLength(VarcharLength.Code)
@@ -48,7 +50,11 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
                 .HasMaxLength(VarcharLength.Identifier)
                 .HasComment("그룹 식별자")
                 ;
-
+            builder.Property(x => x.businessId)
+               .IsRequired()
+               .HasMaxLength(VarcharLength.Identifier)
+               .HasComment("매장 식별자")
+               ;
             // TODO: FK
         }
     }

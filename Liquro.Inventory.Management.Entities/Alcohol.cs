@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Liquro.Inventory.Management.Entities
 {
@@ -45,11 +47,17 @@ namespace Liquro.Inventory.Management.Entities
         [Obsolete("AlcoholSupplier 엔티티로 이동되었습니다. 제거될 예정이므로 사용하지 않습니다.")]
         public virtual Supplier Supplier { get; set; }
 
+        public string businessId { get; set; }
+
+        public virtual Business Business { get; set; }
+
+        public virtual IList<AlcoholSupplier> AlcoholSuppliers { get; set; }
+
         //[NotMapped]
-        public string KindsText
-        {
-            get => Kinds?.Text;
-        }
+        //public string KindsText
+        //{
+        //    get => Kinds?.Text;
+        //}
 
         //[NotMapped]
         //public string SupplierDisplayName
@@ -58,17 +66,21 @@ namespace Liquro.Inventory.Management.Entities
         //}
 
         //[NotMapped]
-        public string DisplayName
-        {
-            get
-            {
-                string name = Name;
-                if (!String.IsNullOrWhiteSpace(Id) && !Id.Equals(Guid.Empty.ToString("n")))
-                {
-                    name = $"{Name} [도수: {(Frequency == 0 ? "-" : $"{Frequency:f1}")} / 용량: {(Volume == 0 ? "-" : $"{Volume:n0}")}]";
-                }
-                return name;
-            }
-        }
+        //public string DisplayName
+        //{
+        //    get
+        //    {
+        //        string name = Name;
+        //        if (!String.IsNullOrWhiteSpace(Id) && !Id.Equals(Guid.Empty.ToString("n")))
+        //        {
+        //            name = $"{Name} [도수: {(Frequency == 0 ? "-" : $"{Frequency:f1}")} / 용량: {(Volume == 0 ? "-" : $"{Volume:n0}")}]";
+        //        }
+        //        return name;
+        //    }
+        //}
+    }
+
+    public class Class1
+    {
     }
 }

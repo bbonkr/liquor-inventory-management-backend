@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Liquro.Inventory.Management.Entities;
 
@@ -12,6 +12,8 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
         public override void Configure(EntityTypeBuilder<OrderAlcohol> builder)
         {
             base.Configure(builder);
+
+            builder.HasComment("주문");
 
             builder.Property(x => x.OrderDate)
                 .IsRequired(true)
@@ -71,7 +73,11 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
                 .HasMaxLength(VarcharLength.Note)
                 .HasComment("기록사항")
                 ;
-
+            builder.Property(x => x.businessId)
+               .IsRequired()
+               .HasMaxLength(VarcharLength.Identifier)
+               .HasComment("매장 식별자")
+               ;
             // TODO: FK
 
 

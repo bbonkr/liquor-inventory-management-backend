@@ -54,13 +54,17 @@ namespace Liquro.Inventory.Management.Entities
 
         public string Note { get; set; }
 
+        public string businessId { get; set; }
+
+        public virtual Business Business { get; set; }
+
         //[ForeignKey("Phone1")]
         //public virtual CommonCode Phone1Code { get; set; }
 
         //[ForeignKey("Mobile1")]
         //public virtual CommonCode Mobile1Code { get; set; }
 
-        
+
         //public string NoteOnList
         //{
         //    get

@@ -20,62 +20,70 @@ namespace Liquro.Inventory.Management.Entities
 
         public string Note { get; set; }
 
-        public string AlcoholName
-        {
-            get
-            {
-                return Alcohol?.Name;
-            }
-        }
+        public string businessId { get; set; }
+
+        public virtual Business Business { get; set; }
+
+        //public string AlcoholName
+        //{
+        //    get
+        //    {
+        //        return Alcohol?.Name;
+        //    }
+        //}
 
         //[NotMapped]
-        public string SupplierName
-        {
-            get
-            {
-                return Supplier.NameOfCompany;
-            }
-        }
+        //public string SupplierName
+        //{
+        //    get
+        //    {
+        //        return Supplier.NameOfCompany;
+        //    }
+        //}
 
         //[NotMapped]
-        public string AlcholAndSupplierDisplayName
-        {
-            get { return $"{Alcohol.DisplayName} {Supplier?.NameOfCompany}"; }
-        }
+        //public string AlcholAndSupplierDisplayName
+        //{
+        //    get { return $"{Alcohol.DisplayName} {Supplier?.NameOfCompany}"; }
+        //}
 
         //[NotMapped]
-        public string SupplierDisplayName
-        {
-            get { return Supplier?.NameOfCompany; }
-        }
+        //public string SupplierDisplayName
+        //{
+        //    get { return Supplier?.NameOfCompany; }
+        //}
 
         //[NotMapped]
-        public string SupplierNameAndUnitPrice
-        {
-            get
-            {
-                return $"[{Supplier?.NameOfCompany}]: {UnitPrice:n0}";
-            }
-        }
+        //public string SupplierNameAndUnitPrice
+        //{
+        //    get
+        //    {
+        //        return $"[{Supplier?.NameOfCompany}]: {UnitPrice:n0}";
+        //    }
+        //}
 
         //[NotMapped]
-        public string UnitPriceString
-        {
-            get
-            {
-                return $"{UnitPrice:n0}";
-            }
-            set
-            {
-                if (!String.IsNullOrEmpty(value))
-                {
-                    double tmp = 0;
-                    if (double.TryParse(value, out tmp))
-                    {
-                        UnitPrice = tmp;
-                    }
-                }
-            }
-        }
+        //public string UnitPriceString
+        //{
+        //    get
+        //    {
+        //        return $"{UnitPrice:n0}";
+        //    }
+        //    set
+        //    {
+        //        if (!String.IsNullOrEmpty(value))
+        //        {
+        //            double tmp = 0;
+        //            if (double.TryParse(value, out tmp))
+        //            {
+        //                UnitPrice = tmp;
+        //            }
+        //        }
+        //    }
+        //}
+    }
+
+    public class Class2
+    {
     }
 }

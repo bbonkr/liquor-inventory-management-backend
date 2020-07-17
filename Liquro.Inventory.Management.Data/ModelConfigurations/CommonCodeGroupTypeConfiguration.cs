@@ -1,4 +1,4 @@
-﻿
+
 using Liquro.Inventory.Management.Entities;
 
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +11,8 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
         public override void Configure(EntityTypeBuilder<CommonCodeGroup> builder)
         {
             base.Configure(builder);
+
+            builder.HasComment("코드 그룹");
 
             builder.Property(x => x.Group)
                 .IsRequired(true)
@@ -25,7 +27,11 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
                 .HasMaxLength(VarcharLength.Note)
                 .HasComment("기록사항")
                 ;
-
+            builder.Property(x => x.businessId)
+               .IsRequired()
+               .HasMaxLength(VarcharLength.Identifier)
+               .HasComment("매장 식별자")
+               ;
         }
     }
 }

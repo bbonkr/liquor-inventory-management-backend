@@ -81,42 +81,46 @@ namespace Liquro.Inventory.Management.Entities
         //[ForeignKey(nameof(AlcoholSupplierId))]
         public virtual AlcoholSupplier AlcoholSupplier { get; set; }
 
-        //[NotMapped]
-        public string AlcoholName
-        {
-            get => AlcoholSupplier?.Alcohol?.Name;
-        }
+        public string businessId { get; set; }
+
+        public virtual Business Business { get; set; }
 
         //[NotMapped]
-        public string KindsText
-        {
-            get => AlcoholSupplier?.Alcohol?.KindsText;
-        }
+        //public string AlcoholName
+        //{
+        //    get => AlcoholSupplier?.Alcohol?.Name;
+        //}
 
         //[NotMapped]
-        public string SupplierName
-        {
-            get => AlcoholSupplier?.Supplier?.NameOfCompany;
-        }
+        //public string KindsText
+        //{
+        //    get => AlcoholSupplier?.Alcohol?.KindsText;
+        //}
 
         //[NotMapped]
-        public string PaymentText
-        {
-            get => Payment?.Text;
-        }
+        //public string SupplierName
+        //{
+        //    get => AlcoholSupplier?.Supplier?.NameOfCompany;
+        //}
 
         //[NotMapped]
-        public string TaxBillText
-        {
-            get => TaxBill?.Text;
-        }
+        //public string PaymentText
+        //{
+        //    get => Payment?.Text;
+        //}
 
         //[NotMapped]
-        public string OrderDateString
-        {
-            get => String.Format("{0:yyyy-MM-dd}", OrderDate);
-        }
+        //public string TaxBillText
+        //{
+        //    get => TaxBill?.Text;
+        //}
 
-        public string Test { get; set; }
+        //[NotMapped]
+        //public string OrderDateString
+        //{
+        //    get => String.Format("{0:yyyy-MM-dd}", OrderDate);
+        //}
+
+        //public string Test { get; set; }
     }
 }

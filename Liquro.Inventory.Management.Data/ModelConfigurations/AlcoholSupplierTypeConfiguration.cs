@@ -15,6 +15,8 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
         {
             base.Configure(builder);
 
+            builder.HasComment("주류 공급자-주류");
+
             builder.Property(x => x.AlcoholId)
                 .IsRequired()
                 .HasMaxLength(VarcharLength.Identifier)
@@ -36,7 +38,20 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
                 .HasComment("기록사항")
                 ;
 
+            builder.Property(x => x.businessId)
+                .IsRequired()
+                .HasMaxLength(VarcharLength.Identifier)
+                .HasComment("매장 식별자")
+                ;
+
+
+
             // TODO: FK
+
+            builder.HasOne(x => x.Business)
+                .WithMany(x => x.AlcoholSuppliers)
+                .HasForeignKey(x => x.businessId)
+                ;
         }
     }
 }

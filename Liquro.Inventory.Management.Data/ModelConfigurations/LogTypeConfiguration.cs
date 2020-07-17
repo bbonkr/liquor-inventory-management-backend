@@ -1,4 +1,4 @@
-﻿
+
 using Liquro.Inventory.Management.Entities;
 
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +11,8 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
         public override void Configure(EntityTypeBuilder<Log> builder)
         {
             base.Configure(builder);
+
+            builder.HasComment("로그");
 
             builder.Property(x => x.Level)
                 .IsRequired(true)

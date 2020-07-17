@@ -15,6 +15,8 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
         {
             base.Configure(builder);
 
+            builder.HasComment("주류 공급자");
+
             builder
                 .Property(x => x.NameOfCompany)
                 .IsRequired()
@@ -94,7 +96,11 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
                 .HasMaxLength(VarcharLength.Note)
                 .HasComment("기록사항")
                 ;
-
+            builder.Property(x => x.businessId)
+               .IsRequired()
+               .HasMaxLength(VarcharLength.Identifier)
+               .HasComment("매장 식별자")
+               ;
         }
     }
 }
