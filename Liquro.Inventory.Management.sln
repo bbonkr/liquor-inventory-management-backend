@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Liquro.Inventory.Management.Repositories", "Liquro.Inventory.Management.Repositories\Liquro.Inventory.Management.Repositories.csproj", "{61708B45-7474-43B7-B43D-1A94DB33FEDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,18 @@ Global
 		{FEC3310D-695C-41CB-8D0F-FEBF7424F4D2}.Release|x64.Build.0 = Release|Any CPU
 		{FEC3310D-695C-41CB-8D0F-FEBF7424F4D2}.Release|x86.ActiveCfg = Release|Any CPU
 		{FEC3310D-695C-41CB-8D0F-FEBF7424F4D2}.Release|x86.Build.0 = Release|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Debug|x64.Build.0 = Debug|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Debug|x86.Build.0 = Debug|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Release|x64.ActiveCfg = Release|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Release|x64.Build.0 = Release|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{61708B45-7474-43B7-B43D-1A94DB33FEDC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

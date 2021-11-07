@@ -48,6 +48,15 @@ namespace Liquro.Inventory.Management.Data.ModelConfigurations
 
             // TODO: FK
 
+            builder.HasOne(x => x.Alcohol)
+                .WithMany(x => x.AlcoholSuppliers)
+                .HasForeignKey(x => x.AlcoholId)
+                ;
+            builder.HasOne(x => x.Supplier)
+                .WithMany(x => x.AlcoholSuppliers)
+                .HasForeignKey(x => x.SupplierId)
+                ;
+
             builder.HasOne(x => x.Business)
                 .WithMany(x => x.AlcoholSuppliers)
                 .HasForeignKey(x => x.businessId)

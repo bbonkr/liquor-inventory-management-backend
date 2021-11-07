@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+
 namespace Liquro.Inventory.Management.Entities
 {
     public class Supplier : BaseIdentifierModel
@@ -57,6 +60,8 @@ namespace Liquro.Inventory.Management.Entities
         public string businessId { get; set; }
 
         public virtual Business Business { get; set; }
+
+        public virtual IList<AlcoholSupplier> AlcoholSuppliers { get; set; }
 
         //[ForeignKey("Phone1")]
         //public virtual CommonCode Phone1Code { get; set; }
